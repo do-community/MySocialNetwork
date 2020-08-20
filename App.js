@@ -43,7 +43,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <FriendsContext.Provider>
+      <FriendsContext.Provider
+        value={
+          {
+            currentFriends: this.state.currentFriends,
+            possibleFriends: this.state.possibleFriends,
+            addFriend: this.addFriend
+          }
+        }
+      >
         <NavigationContainer>
           <Stack.Navigator>
             <Stack.Screen
