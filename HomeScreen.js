@@ -1,11 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>You have (undefined) friends.</Text>
+        <Text>You have { this.props.friends.current.length } friends.</Text>
 
         <Button
           title="Add some friends"
@@ -27,4 +28,9 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+const mapStateToProps = (state) => {
+  const { friends } = state
+  return { friends }
+};
+
+export default connect(mapStateToProps)(HomeScreen);
