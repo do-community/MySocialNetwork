@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from './HomeScreen';
 
 const Stack = createStackNavigator();
 
@@ -11,6 +12,10 @@ class App extends React.Component {
     return (
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     );
