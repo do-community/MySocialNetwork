@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 class FriendsScreen extends React.Component {
@@ -6,6 +7,15 @@ class FriendsScreen extends React.Component {
     return (
       <View style={styles.container}>
         <Text>Add friends here!</Text>
+
+        {
+          this.props.friends.possible.map((friend, index) => (
+            <Button
+              key={ friend }
+              title={ `Add ${ friend }` }
+            />
+          ))
+        }
 
         <Button
           title="Back to home"
@@ -27,4 +37,9 @@ const styles = StyleSheet.create({
   },
 });
 
-export default FriendsScreen;
+const mapStateToProps = (state) => {
+  const { friends } = state
+  return { friends }
+};
+
+export default connect(mapStateToProps)(FriendsScreen);
