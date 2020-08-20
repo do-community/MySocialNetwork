@@ -1,0 +1,12 @@
+{
+  "name": "MySocialNetwork",
+  "displayName": "MySocialNetwork",
+  "expo": {
+    "name": "MySocialNetwork",
+    "slug": "MySocialNetwork",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
