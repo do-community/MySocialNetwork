@@ -1,11 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import { FriendsContext } from './FriendsContext';
 
 class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>You have (undefined) friends.</Text>
+        <Text>You have { this.context.currentFriends.length } friends.</Text>
 
         <Button
           title="Add some friends"
@@ -17,6 +18,7 @@ class HomeScreen extends React.Component {
     );
   }
 }
+HomeScreen.contextType = FriendsContext;
 
 const styles = StyleSheet.create({
   container: {
